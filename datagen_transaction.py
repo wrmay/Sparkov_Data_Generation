@@ -68,7 +68,7 @@ class Customer:
 
             if (is_fraud == 0 and t[1] not in fraud_dates) or is_fraud == 1:
                 features = self.raw + t + [chosen_merchant, str(merch_lat), str(merch_long)]
-                print("|".join(features))
+                print(",".join([f.replace(',', ' ') for f in features]))
 
 
     def parse_customer(self, line):
@@ -110,7 +110,7 @@ def main(customer_file, profile_file, start_date, end_date, out_path=None, start
     # generate appropriate number of transactions
     with open(customer_file, 'r') as f:
         f.readline()
-        print("|".join(headers + transaction_headers))
+        print(",".join(headers + transaction_headers))
         line_num = 0
         fail = False
         # skip lines out of range
