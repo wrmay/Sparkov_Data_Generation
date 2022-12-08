@@ -1,0 +1,10 @@
+services:
+  mariadb:
+    image: mariadb
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: secretsauce
+    ports:
+      - "3306:3306"
+    volumes:
+      - "~/data/cctrans_refdata:/var/lib/mysql"

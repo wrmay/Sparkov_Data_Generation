@@ -1,3 +1,12 @@
+# Simulator Mode
+
+Merchant and customer data are loaded into a database.  Transactions are produced at a certain rate.
+
+The stream or streams of data will be spread across all customers and will be in 
+order within each customer.  The stream can be played back at a rate that is faster or 
+slower than the "real life" pace suggested by the time stamps in the data .  Stream processors should 
+take the timestamps from the data, not from ingestion time.
+
 # Generate Fake Credit Card Transaction Data, Including Fraudulent Transactions
 
 Note: Version v1.0 behavior has changed in such a way that it runs much faster, however transaction files are chunked, so that several files get generated per profile. If your downstream process expects 1 file per profile, please checkout the v0.5 release branch `release/v0.5`.
